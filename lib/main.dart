@@ -5,6 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget{
+  int count=0;
   @override
   Widget build(BuildContext context) {
 
@@ -23,13 +24,18 @@ class MyApp extends StatelessWidget{
         ),
         body:Column(
           children: [
-            Text("Result",
+            Text("Result $count",
             style:TextStyle(
               fontSize: 30,
               
 
               ),)
-            
+            ,Checkbox(value: false,
+                onChanged:(x) {
+              count++;
+            print("count ===> $count");
+            }
+            )
 
           ],
         )
